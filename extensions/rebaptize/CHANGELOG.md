@@ -1,5 +1,11 @@
 # Rebaptize Changelog
 
+## [Documentation Cleanup] - {PR_MERGE_DATE}
+
+- Fix the Movie preset example in the README. The previous example showed three different movies in the "Before" column all becoming the same name in the "After", which incorrectly implied the tool renames unrelated files together. Updated to show three release variants of the same movie, matching the preset's actual purpose (normalising multiple formats/qualities of one film)
+- List all 9 supported formats for "Rename Photos by EXIF" explicitly (JPEG, TIFF, PNG, HEIC, WebP, DNG, Canon CR2, Nikon NEF, Sony ARW) instead of "JPEG, TIFF, HEIC, RAW (ARW, CR2, NEF, DNG), and more"
+- Tighten README prose throughout
+
 ## [New Commands and Features] - 2026-05-12
 
 ### Changes
