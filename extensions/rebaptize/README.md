@@ -6,12 +6,12 @@
 
 Bulk rename and organize files directly from Raycast. 40 commands covering everything from instant one-shot case conversion to smart TV show episode organization with metadata from TMDB and TheTVDB.
 
-Every function is its own Raycast command — assign aliases and hotkeys to the ones you use most. All commands auto-detect the current Finder folder.
+Every function is its own Raycast command. Assign aliases and hotkeys to the ones you use most. All commands auto-detect the current Finder folder.
 
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-- [Rename Files](#rename-files) — TV Show, Anime, Movie, Date-Based, Change Case, Swap Delimiter, Auto Enumerate, Change Extension, Find & Replace
+- [Rename Files](#rename-files): TV Show, Anime, Movie, Date-Based, Change Case, Swap Delimiter, Auto Enumerate, Change Extension, Find & Replace
   - [Custom Template Mode](#custom-template-mode)
 - [Smart Organize Episodes](#smart-organize-episodes)
 - [Smart Find & Replace](#smart-find--replace)
@@ -21,9 +21,9 @@ Every function is its own Raycast command — assign aliases and hotkeys to the 
 - [Rename from CSV](#rename-from-csv)
 - [Custom Rename Scripts](#custom-rename-scripts)
 - [Preset Shortcuts](#preset-shortcuts)
-- [Instant Commands](#instant-commands) — Case, Delimiter, Clean Up, Utility, Undo
+- [Instant Commands](#instant-commands): Case, Delimiter, Clean Up, Utility, Undo
 - [Finder Detection](#finder-detection)
-- [Metadata Integration](#metadata-integration-optional) — TMDB, TheTVDB
+- [Metadata Integration](#metadata-integration-optional): TMDB, TheTVDB
 - [Tips](#tips)
 
 ## Getting Started
@@ -58,8 +58,8 @@ Breaking.Bad.S01E03.HDTV.XviD-LOL.avi            Breaking Bad S01E03.avi
 | Season / Default Season               | Season number. When override is off, only used for files without season info.                                               | `1`                          |
 | Start Episode / Default Start Episode | First episode number. When override is off, only used for files without episode info.                                       | `1`                          |
 | Word Separator                        | Space, Dot, Underscore, Dash, or Custom                                                                                     | Space                        |
-| Custom Separator                      | Any string (shown when Custom is selected)                                                                                  | —                            |
-| Suffix                                | Text added after `S01E01` (e.g. `1080p`, `PROPER`)                                                                          | —                            |
+| Custom Separator                      | Any string (shown when Custom is selected)                                                                                  |                              |
+| Suffix                                | Text added after `S01E01` (e.g. `1080p`, `PROPER`)                                                                          |                              |
 
 ### Anime
 
@@ -76,27 +76,27 @@ Before       After
 | ------------- | ------------------------------------ | ---------------------------- |
 | Anime Name    | Name of the anime (required)         | Auto-detected from filenames |
 | Start Episode | First episode number                 | `1`                          |
-| Sub Group     | Fansub group name (optional)         | —                            |
-| Quality       | Quality tag (optional, e.g. `1080p`) | —                            |
+| Sub Group     | Fansub group name (optional)         |                              |
+| Quality       | Quality tag (optional, e.g. `1080p`) |                              |
 
 ### Movie
 
 Standard movie format with year and quality.
 
 ```
-Before                              After
-Interstellar 2014 1080p BluRay.mkv  Interstellar 2014 1080p.mkv
-The_Dark_Knight_2008_720p.mp4       Interstellar 2014 1080p.mp4
-inception.2010.brrip.x264.mkv      Interstellar 2014 1080p.mkv
+Before                                              After
+Interstellar.2014.1080p.BluRay.x264-DEMAND.mkv      Interstellar 2014 1080p.mkv
+interstellar_(2014)_DVDRip_x264.mp4                 Interstellar 2014 1080p.mp4
+Interstellar.2014.HEVC.HDR.WEBRip.avi               Interstellar 2014 1080p.avi
 ```
 
-Note: All files in the folder are renamed to the same movie name you provide.
+Note: All files in the folder are renamed to the same movie name you provide. Use this when you have multiple versions of the same movie (different formats, qualities, or releases) that you want to normalise to a single clean name. The original extension is preserved on each file.
 
 | Option         | Description                             | Default                      |
 | -------------- | --------------------------------------- | ---------------------------- |
 | Movie Name     | Name of the movie (required)            | Auto-detected from filenames |
-| Year           | Release year (optional)                 | —                            |
-| Quality        | Quality tag (optional, e.g. `1080p`)    | —                            |
+| Year           | Release year (optional)                 |                              |
+| Quality        | Quality tag (optional, e.g. `1080p`)    |                              |
 | Word Separator | Space, Dot, Underscore, Dash, or Custom | Space                        |
 
 ### Date-Based
@@ -112,7 +112,7 @@ IMG_0002.jpg     Lisbon-2025-01-15_14-00-00-002.jpg
 | Option      | Description                                 | Default      |
 | ----------- | ------------------------------------------- | ------------ |
 | Date Format | `YYYY-MM-DD`, `DD-MM-YYYY`, or `MM-DD-YYYY` | `YYYY-MM-DD` |
-| Prefix      | Text before the date (optional)             | —            |
+| Prefix      | Text before the date (optional)             |              |
 
 Uses the file's creation date. Falls back to modification date if creation date is unavailable.
 
@@ -224,8 +224,8 @@ Bulk convert file extensions. Optionally filter to only change files with a spec
 
 | Option         | Description                                                 | Default |
 | -------------- | ----------------------------------------------------------- | ------- |
-| From Extension | Only change files with this extension (leave empty for all) | —       |
-| New Extension  | The target extension (required)                             | —       |
+| From Extension | Only change files with this extension (leave empty for all) |         |
+| New Extension  | The target extension (required)                             |         |
 
 ### Find & Replace
 
@@ -237,8 +237,8 @@ Remove quality tags:  My.Show.S01E01.720p.BluRay.x264-GROUP.mkv  →  My.Show.S0
 
 | Option                 | Description                                                         | Default |
 | ---------------------- | ------------------------------------------------------------------- | ------- |
-| Find                   | Pattern to search for                                               | —       |
-| Replace With           | Replacement text (supports `$1`, `$2` capture groups in regex mode) | —       |
+| Find                   | Pattern to search for                                               |         |
+| Replace With           | Replacement text (supports `$1`, `$2` capture groups in regex mode) |         |
 | Use Regular Expression | Toggle regex mode                                                   | Off     |
 
 ---
@@ -286,7 +286,7 @@ The episode parser recognizes 9 different formats:
 
 ### Season Configuration (Manual Mode)
 
-In manual mode, each season has its own episode count field. Not all shows have the same number of episodes per season — for example Breaking Bad has 7, 13, 13, 13, and 16 episodes across its 5 seasons.
+In manual mode, each season has its own episode count field. Not all shows have the same number of episodes per season. For example, Breaking Bad has 7, 13, 13, 13, and 16 episodes across its 5 seasons.
 
 ```
 Season 1 Episodes: [7 ]
@@ -317,15 +317,15 @@ Folder contents:                                     File filter: *.mkv
 My.Show.S01E01.720p.BluRay.x264-GROUP.mkv            Rule 1: \.720p\.BluRay.*?-\w+  →  (empty)  [regex]
 My.Show.S01E02.720p.BluRay.x264-GROUP.mkv            Rule 2: \.1080p.*$  →  (empty)  [regex]
 My.Show.S01E03.1080p.HDTV.x264-FLEET.mkv
-notes.txt  (filtered out — not *.mkv)                 Result: My.Show.S01E01.mkv, My.Show.S01E02.mkv, ...
+notes.txt  (filtered out, not *.mkv)                 Result: My.Show.S01E01.mkv, My.Show.S01E02.mkv, ...
 ```
 
 | Option                       | Description                                                                    | Default       |
 | ---------------------------- | ------------------------------------------------------------------------------ | ------------- |
-| File Filter                  | Glob pattern to target specific files (e.g. `*.mkv`, `*.{mkv,mp4}`, `photo_*`) | — (all files) |
+| File Filter                  | Glob pattern to target specific files (e.g. `*.mkv`, `*.{mkv,mp4}`, `photo_*`) |   (all files) |
 | Include file extension       | Whether find/replace operates on the extension too                             | Off           |
-| Rule 1-3: Find               | Pattern to search for                                                          | —             |
-| Rule 1-3: Replace            | Replacement text (supports `$1`, `$2` in regex mode)                           | —             |
+| Rule 1-3: Find               | Pattern to search for                                                          |               |
+| Rule 1-3: Replace            | Replacement text (supports `$1`, `$2` in regex mode)                           |               |
 | Rule 1-3: Regular Expression | Toggle regex mode per rule                                                     | Off           |
 | Rule 1-3: Case Sensitive     | Toggle case sensitivity per rule                                               | On            |
 
@@ -356,7 +356,7 @@ Uses file creation date. Falls back to modification date if creation date is una
 
 ## Sort Photos by Location
 
-Organize photos into subfolders by GPS data embedded in EXIF metadata. Uses OpenStreetMap Nominatim for reverse geocoding — no API key required.
+Organize photos into subfolders by GPS data embedded in EXIF metadata. Uses OpenStreetMap Nominatim for reverse geocoding. No API key required.
 
 ```
 Before:                After (by city):
@@ -404,7 +404,9 @@ Template: {model}_{date}_{i} → EOS R5_2026-03-31_001.jpg
 Template: {date}_{name}      → 2026-03-31_DSC_0001.jpg
 ```
 
-Files are automatically sorted by EXIF date taken. Supports JPEG, TIFF, HEIC, RAW (ARW, CR2, NEF, DNG), and more.
+Files are automatically sorted by EXIF date taken.
+
+**Supported formats:** JPEG (`.jpg`, `.jpeg`), TIFF (`.tiff`, `.tif`), PNG (`.png`), HEIC (`.heic`, `.heif`), WebP (`.webp`), DNG (`.dng`), Canon CR2 (`.cr2`), Nikon NEF (`.nef`), Sony ARW (`.arw`).
 
 ---
 
@@ -432,10 +434,10 @@ Build reusable rename pipelines that combine a file filter with a sequence of re
 
 1. Open Raycast → search **"Create Rename Script"**
 2. Press `Enter` on the script info item to set:
-   - **Script Name** — a descriptive name (e.g. "Clean MKV for Plex")
-   - **Description** — what the script does
-   - **File Filter** — glob pattern to target specific files (e.g. `*.mkv`, leave empty for all files)
-3. Add steps to the pipeline — each step transforms the filename and passes the result to the next step
+   - **Script Name**: a descriptive name (e.g. "Clean MKV for Plex")
+   - **Description**: what the script does
+   - **File Filter**: glob pattern to target specific files (e.g. `*.mkv`, leave empty for all files)
+3. Add steps to the pipeline. Each step transforms the filename and passes the result to the next step
 
 **Available step types (23):**
 
@@ -460,7 +462,7 @@ Steps with configuration options (e.g. Swap Parts lets you set the separator, In
 | `Cmd + Shift + P`          | Preview against current Finder folder |
 | `Cmd + S`                  | Save script                           |
 
-**Example pipeline** — clean up messy TV downloads:
+**Example pipeline**: clean up messy TV downloads:
 
 1. **Filter:** `*.mkv`
 2. **Step 1:** Swap Delimiter `.` → ` ` (dots to spaces)
@@ -473,7 +475,7 @@ Result: `breaking.bad.s01e01.720p.bluray.mkv` → `Breaking Bad S01E01.mkv`
 
 1. Open Raycast → search **"Run Rename Script"**
 2. Select a saved script from the list
-3. Press `Enter` to run — shows a preview of all renames before confirming
+3. Press `Enter` to run. A preview of all renames is shown before confirming
 
 The script list shows each script's name, description, file filter, and step count. Scripts are stored persistently and survive Raycast restarts.
 
@@ -484,13 +486,13 @@ The script list shows each script's name, description, file filter, and step cou
 | `Cmd + K` → View Steps | View the pipeline         |
 | `Cmd + Backspace`      | Delete script             |
 
-After running a script, undo state is saved — use **Undo Last Rename** to revert.
+After running a script, undo state is saved. Use **Undo Last Rename** to revert.
 
 ---
 
 ## Preset Shortcuts
 
-Each preset from Rename Files is also available as a standalone command for direct access. These open the same form but pre-select the preset — useful for assigning aliases.
+Each preset from Rename Files is also available as a standalone command for direct access. These open the same form but pre-select the preset, useful for assigning aliases.
 
 | Command                 | Output Format                                      |
 | ----------------------- | -------------------------------------------------- |
@@ -507,7 +509,7 @@ Each preset from Rename Files is also available as a standalone command for dire
 
 ## Instant Commands
 
-Zero-UI commands that execute immediately against the current Finder folder. No forms, no preview, no clicks — just a confirmation HUD. Every instant command saves undo state.
+Zero-UI commands that execute immediately against the current Finder folder. No forms, no preview, no clicks, just a confirmation HUD. Every instant command saves undo state.
 
 ### Case Conversion
 
@@ -559,9 +561,9 @@ Enumerate commands prepend the number to the original filename. Enumerate by Dat
 
 | Command          | Description                                                                                                |
 | ---------------- | ---------------------------------------------------------------------------------------------------------- |
-| Undo Last Rename | Reverts the last rename or organize operation. Available within 5 minutes. Single use — cannot undo twice. |
+| Undo Last Rename | Reverts the last rename or organize operation. Available within 5 minutes. Single use. Cannot undo twice. |
 
-Every command in Rebaptize saves undo state — including Rename Files, Smart Organize Episodes, Smart Find & Replace, Sort Files by Date, Sort Photos by Location, Run Rename Script, and all instant commands. For organize commands that move files into subfolders, undo moves them back and cleans up the empty folders.
+Every command in Rebaptize saves undo state, including Rename Files, Smart Organize Episodes, Smart Find & Replace, Sort Files by Date, Sort Photos by Location, Run Rename Script, and all instant commands. For organize commands that move files into subfolders, undo moves them back and cleans up the empty folders.
 
 ---
 
@@ -569,8 +571,8 @@ Every command in Rebaptize saves undo state — including Rename Files, Smart Or
 
 All commands auto-detect the current Finder folder using two strategies:
 
-1. **Selected items** — if files or folders are selected in Finder, uses the selected folder (or the parent folder of a selected file)
-2. **Frontmost window** — falls back to AppleScript to get the path of the frontmost Finder window
+1. **Selected items**: if files or folders are selected in Finder, uses the selected folder (or the parent folder of a selected file)
+2. **Frontmost window**: falls back to AppleScript to get the path of the frontmost Finder window
 
 If Finder is not open or no folder can be determined, the folder picker is shown empty for manual selection. The detected folder path is shown as info text beneath the folder picker.
 
@@ -582,7 +584,7 @@ Smart Organize Episodes can fetch real season and episode data from online datab
 
 ### TMDB (Free)
 
-[The Movie Database](https://www.themoviedb.org/) — completely free, excellent anime and TV coverage.
+[The Movie Database](https://www.themoviedb.org/). Completely free, with excellent anime and TV coverage.
 
 1. Create a free account at [themoviedb.org](https://www.themoviedb.org/signup)
 2. Go to [Settings → API](https://www.themoviedb.org/settings/api) and request an API key (use the "API Key" / v3 auth key, not the Read Access Token)
@@ -590,7 +592,7 @@ Smart Organize Episodes can fetch real season and episode data from online datab
 
 ### TheTVDB ($12/year)
 
-[TheTVDB](https://thetvdb.com) — the classic TV metadata source, requires a paid subscription.
+[TheTVDB](https://thetvdb.com). The classic TV metadata source, requires a paid subscription.
 
 1. Subscribe at [thetvdb.com/subscribe](https://thetvdb.com/subscribe) ($12/year)
 2. Get an API key from your [dashboard](https://www.thetvdb.com/dashboard/account/apikey)
@@ -598,14 +600,14 @@ Smart Organize Episodes can fetch real season and episode data from online datab
 
 When using a metadata source, type a show name and a dropdown appears with up to 5 search results (name + year). Select the correct show and the extension fetches the full season/episode breakdown. Specials (Season 0) are filtered out automatically.
 
-If both keys are configured, you can choose which source to use per command run. Without either key, everything still works — you set the episodes-per-season count manually.
+If both keys are configured, you can choose which source to use per command run. Without either key, everything still works. You set the episodes-per-season count manually.
 
 ---
 
 ## Tips
 
 - **Aliases:** Search any command → `Cmd + K` → Configure Command → set an alias (e.g. `tv` for Rename as TV Show, `undo` for Undo Last Rename)
-- **Hotkeys:** Same menu — assign a global keyboard shortcut to any command
+- **Hotkeys:** Same menu, assign a global keyboard shortcut to any command
 - **Finder:** All commands auto-detect the current Finder folder. Navigate to the right folder before invoking.
 - **Undo:** Every rename and organize command is undoable. Run Undo Last Rename within 5 minutes to revert.
 - **Scripts:** Build reusable rename pipelines with Create Rename Script. Run them from Run Rename Script. Assign an alias to Run Rename Script (e.g. `rs`) for quick access.
