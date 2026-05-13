@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "lib": ["es2022", "dom"],
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "types": ["node", "react"],
+    "allowJs": true
+  },
+  "include": ["src/**/*", "raycast-env.d.ts"],
+  "exclude": ["dist", "node_modules"]
+}
