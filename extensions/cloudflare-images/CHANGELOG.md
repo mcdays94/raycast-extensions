@@ -7,17 +7,6 @@ conventions and (eventually) [Semantic Versioning](https://semver.org).
 The Raycast Store displays the latest section as the extension's "What's New"
 copy on the listing page, so keep the most recent release at the top.
 
-## [Unreleased]
-
-### Planned
-
-- Replace the placeholder icon.
-- Record a README hero GIF for GitHub.
-- Wire GitHub Actions CI on PR (typecheck + ray build + smoke tests).
-- Friendly Form view for editing the metadata template (alternative to the JSON textfield).
-- Pagination in My Cloudflare Images beyond the first 100 images.
-- Bulk delete in My Cloudflare Images.
-
 ## [0.4.0] - {PR_MERGE_DATE}
 
 Local-only release: parity with the VS Code extension is closed.
