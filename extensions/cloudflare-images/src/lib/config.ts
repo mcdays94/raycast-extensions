@@ -1,34 +1,17 @@
 import { getPreferenceValues } from "@raycast/api";
 import type {
-  AvifConversionFormat,
   CloudflareConfig,
   CompressionConfig,
-  OutputFormat,
 } from "@mcdays/cloudflare-images-core";
 
 /**
- * Shape of the Raycast preferences declared in `package.json`. Mirrored here
- * for type safety. Raycast also generates `raycast-env.d.ts` with a similar
- * interface on `ray develop` / `ray build`, but defining it explicitly here
- * means we don't depend on that build step having run yet.
+ * The preference shape comes from `raycast-env.d.ts`, which Raycast
+ * auto-generates from the manifest's `preferences` array on every `ray
+ * develop` / `ray build`. Repo convention is to consume that generated
+ * `Preferences` type directly instead of duplicating it by hand, so that
+ * a manifest change can't silently drift from a hand-written interface.
  */
-export interface CfImagesPreferences {
-  accountId: string;
-  apiToken: string;
-  accountHash: string;
-  defaultVariant: string;
-  outputFormat: OutputFormat;
-  useSignedUrls: boolean;
-  signedUrlExpiration: string; // textfield → string from Raycast, parsed below
-  manualSigningKey: string;
-  addMetadata: boolean;
-  metadataTemplate: string; // JSON object as string, parsed below
-  enableCompression: boolean;
-  maxFileSizeMB: string;
-  compressionQuality: string;
-  preservePngFormat: boolean;
-  avifConversionFormat: AvifConversionFormat;
-}
+export type CfImagesPreferences = Preferences;
 
 /**
  * Default metadata template, identical to the manifest's `default` value. Used
@@ -49,7 +32,7 @@ export const DEFAULT_METADATA_TEMPLATE: Record<string, string> = {
  * `package.json` manifest.
  */
 export function getPreferences(): CfImagesPreferences {
-  const raw = getPreferenceValues<CfImagesPreferences>();
+  const raw = getPreferenceValues<Preferences>();
   return {
     ...raw,
     defaultVariant: raw.defaultVariant?.trim() || "/public",
