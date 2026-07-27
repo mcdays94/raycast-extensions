@@ -1,0 +1,27 @@
+extensions/p00f/CHANGELOG.md
+  s_e09f5d03b6a2b1::t_65dbaffc1bf402 3-6
+extensions/p00f/src/create-poof.tsx
+  s_e09f5d03b6a2b1::t_5f2992d94e0085 1-3
+extensions/p00f/src/lib/webcrypto.ts
+  s_e09f5d03b6a2b1::t_f3060b25b59e38 1-45
+extensions/p00f/src/poof-clipboard.ts
+  s_e09f5d03b6a2b1::t_91af98ece53c2d 1-3
+extensions/p00f/src/poof-selection.ts
+  s_e09f5d03b6a2b1::t_150fc2ceb8a225 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "22f8e42ec558f14385240b6524959ec46b1155e4",
+  "prompts": {},
+  "sessions": {
+    "s_e09f5d03b6a2b1": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_05d508759ffeCDQvBGc7BBzT1v",
+        "model": "claude-opus-5"
+      },
+      "human_author": "mcdays94 <67048887+mcdays94@users.noreply.github.com>"
+    }
+  }
+}
